@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecturer Dashboard</title>
+  <link rel="stylesheet" href="l_dashboard1.css">
+  <meta name="description" content="profchecklecdash">
+</head>
+
+<body>
+  <header>
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="lecturerdashboard.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Report</a></li>
+        <li><a href="mainpage.html">Logout</a></li>
+      </ul>
+    </div>
+    <button class="open-btn" onclick="toggleSidebar()">
+      <div class="menu-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </button>
+    <div>
+      <h1 id="mainhead">《 ProfCheck Lecturer Dashboard 》</h1>
+    </div>
+  </header>
+  <div class="dashboard">
+    <div class="actions">
+      <div class="action">
+        <a href="profile.html"><img src="https://cdn-icons-png.flaticon.com/128/166/166256.png" alt="Update Profile">
+          <h4><p>Update Profile</p></h4>
+        </a>
+      </div>
+      <div class="action">
+        <a href="profile.html"><img
+            src="https://www.clipartmax.com/png/middle/35-358426_timetable-timetable-icon-png.png"
+            alt="Upload Timetable">
+          <h4><p>Upload Timetable</p></h4>
+        </a>
+      </div>
+      <div class="action">
+        <a href="https://www.google.com/maps/@26.2738493,81.5047764,15z/data=!4m2!7m1!2e1?entry=ttu"><img
+            src="https://cdn-icons-png.flaticon.com/512/2196/2196818.png"
+            alt="Share Your Location"></a>
+        <h4><p>Share Your Location</p></h4>
+      </div>
+    </div>
+    <hr>
+    <div class="options">
+      <h2>Present in Cabin :</h2>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <h2>Do not disturb :</h2>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <hr>
+    <div class="location">
+      <label for="locationlink"><h3>Upload/Update live location link:</h3></label>
+      <input type="text" id="locationlink" placeholder="Link...!!!">
+      <button type="submit" id="locationsubmit" onclick="showPopup()">Submit</button>
+    </div>
+    <hr>
+    <div class="update-info">
+      <label for="update"><h3>Make an Announcement :</h3></label>
+      <textarea id="update" placeholder="Update Information"></textarea>
+      <button id="updatebutton">Update</button>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <p>&copy; Copyright 2024 ProfCheck - All Rights Reserved.</p>
+</footer>
+  <script>function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }</script>
+  <script>
+    var button = document.getElementById('updatebutton');
+    button.addEventListener('mouseover', function () {
+      button.animate({
+        scale: 1.1, // Increase size on hover
+        backgroundColor: '#ff0000' // Change color
+      }, {
+        duration: 300 // Animation duration
+      });
+    });
+  </script>
+  <script>
+    function showPopup() {
+      alert("Your Live Location is Enabled!");
+    }
+  </script>
+
+</body>
+
+</html>

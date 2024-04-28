@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof-Check Student Dashboard</title>
+    <meta name="description" content="profcheckstudentdashboard">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Honk&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Honk&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Honk&family=Tac+One&display=swap');
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        header {
+            margin: 0px;
+            background-color: #111;
+        }
+
+        #mainhead {
+            align-items: center;
+            text-align: center;
+            font-family:"Dancing Script", cursive;
+            font-weight: 700;
+            font-size: 35px;
+            margin: 0px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            color: white;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+
+
+        .open-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            margin-top: 23px;
+
+        }
+
+        .menu-icon div {
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            left: 0;
+        }
+
+        .menu-icon div:nth-child(1) {
+            top: 0;
+        }
+
+        .menu-icon div:nth-child(2) {
+            top: 8px;
+        }
+
+        .menu-icon div:nth-child(3) {
+            top: 16px;
+        }
+
+        #search-container {
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        #search-input {
+            padding: 7px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #search {
+            padding: 5px;
+            border: 1px;
+            border-radius: 5px;
+            background-color: #111;
+            color: aqua;
+
+        }
+
+        #dashboard {
+            padding-left: 120px;
+            padding-right: 120px;
+            background-image: url(https://thuthuatnhanh.com/wp-content/uploads/2022/05/background-trang-hinh-khoi-xep-chong.jpg);
+        }
+
+        .lecturerimage {
+            width: 100px;
+            height: 100px;
+            border: 10px;
+            border-radius: 30px;
+            border-color: #111;
+
+            align-items: center;
+        }
+
+        .lecturers {
+            display: inline-block;
+            margin: 50px;
+        }
+
+        .lecturername {
+            text-align: center;
+            color: black;
+        }
+
+        footer {
+            margin-top: 10px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="Studentdashboard.html">Home</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Report</a></li>
+                <li><a href="mainpage.html">Logout</a></li>
+            </ul>
+        </div>
+        <button class="open-btn" onclick="toggleSidebar()">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </button>
+        <div>
+            <h1 id="mainhead">《 ProfCheck Student Dashboard 》</h1>
+        </div>
+    </header>
+
+
+    <div id="dashboard">
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search" onclick="search()">Search</button>
+        </div>
+        <div class="lecturers">
+            <a href="gargimam.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/images/GargiSrivastava_AD-RD.jpg" alt="Gargi Mam">
+                <h4 class="lecturername">Dr.Gargi Srivastava <br>Computer Science</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="director.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/202304281740216020.jpg" alt="Director">
+                <h4 class="lecturername">Dr A S K Sinha <br>Director</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="sajalmam.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/202106251512213691.jpg" alt="sajal Mam">
+                <h4 class="lecturername">Dr.Sajal Agarwal <br>Electronics</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="akashsir.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/202304271432414944.jpg" alt="akash sir">
+                <h4 class="lecturername">Dr.Akash Yadav <br>Computer Science</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="amarishsir.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/202111121700023996.jpg" alt="amarish sir">
+                <h4 class="lecturername">Dr.Amarish Dubey <br>Electronics</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="atulsir.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/201911231304493467.jpg" alt="Atul sir">
+                <h4 class="lecturername">Dr.Atul Sharma <br>Physics</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="kavithamam.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/202111231311332928.jpg" alt="kavithamam">
+                <h4 class="lecturername">Dr.Kavitha Srivastava <br>Marketing Management</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="pallabimam.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/202208161128381969.jpg" alt="pallabi Mam">
+                <h4 class="lecturername">Dr.Pallabi Saikia <br>Computer Science</h4>
+            </a>
+        </div>
+        <div class="lecturers">
+            <a href="sushamsir.html"><img class="lecturerimage"
+                    src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/201912191008359362.jpg" alt="sushamsir">
+                <h4 class="lecturername">Dr.Susham Biswas <br>Computer Science</h4>
+            </a>
+        </div>
+        
+    </div>
+    <hr>
+    <footer>
+        <p>&copy; Copyright 2024 ProfCheck - All Rights Reserved.</p>
+    </footer>
+
+
+
+
+    <script src="s_dashboard_script.js"></script>
+    <script>function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }</script>
+    <script>
+        function search() {
+            // Retrieve input value from search bar
+            var input = document.getElementById('search-input').value.toLowerCase();
+
+            // Get all elements with class "name"
+            var lecturers = document.getElementsByClassName('lecturername');
+
+            // Loop through all the lecturer names
+            for (var i = 0; i < lecturers.length; i++) {
+                var name = lecturers[i].textContent.toLowerCase(); // Get text content of the lecturer name
+
+                // Check if the input value matches any part of the lecturer name
+                if (name.includes(input)) {
+                    // If matched, display the corresponding lecturer
+                    lecturers[i].parentNode.style.display = 'block';
+                } else {
+                    // If not matched, hide the corresponding lecturer
+                    lecturers[i].parentNode.style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

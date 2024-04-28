@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gargi Mam ProfCheck</title>
+  <link rel="stylesheet" href="gargimam.css">
+  <meta name="description" content="profchecklecdash">
+
+    <style>
+        .container {
+  display: flex;
+}
+
+.lecturer {
+  flex: 1;
+}
+
+.options {
+  flex: 1;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+ </style>
+</head>
+
+<body>
+  <header>
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="lecturerdashboard.html">Home</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Report</a></li>
+        <li><a href="mainpage.html">Logout</a></li>
+      </ul>
+    </div>
+    <button class="open-btn" onclick="toggleSidebar()">
+      <div class="menu-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </button>
+    <div>
+      <h1 id="mainhead">《 ProfCheck Lecturer Dashboard 》</h1>
+    </div>
+  </header>
+  <div id="dashboard">
+    <div class="container">
+    <div class="lecturer">
+      <img class="lecturerimage" src="https://www.rgipt.ac.in/faculty/Content/FacultyImage/201911231304493467.jpg"
+        alt="Gargi Mam">
+      <p>
+      <h4 class="lecturername">Dr Atul Sharma <br>Physics</h4>
+      </p>
+    </div>
+    <div class="options">
+      <h2>Present in Cabin :</h2>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <h2>Do not disturb :</h2>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <span id="trackbutton">
+    <a href="https://maps.app.goo.gl/yn89sMYntD3mVpKr6"><button class="track">Track Lecturer</button></a>
+    <a href="https://www.rgipt.ac.in/faculty/Faculty/FacultyProfile?Sid=Y4x%2Ff%2FqeuO4%3D"><button class="track">Faculty Profile</button></a>
+    <button class="track">View Timetable</button>
+  </span>
+    <hr>
+    <h2 style="text-decoration: underline;"> New Announcements</h2>
+    <p>Today is Web Technology Lab exam :
+      Timings - CSE - 10:00 am - 11:30 am
+    </p>
+    <hr>
+    <h2 style="color: black;text-decoration: underline;">Rate Your Lecturer</h2>
+    <div class="rating">
+      <span>&#x2606;</span>
+      <span>&#x2606;</span>
+      <span>&#x2606;</span>
+      <span>&#x2606;</span>
+      <span>&#x2606;</span>
+    </div>
+    <div class="update-info">
+      <label for="update">
+        <h3>Provide Feedback :</h3>
+      </label>
+      <textarea id="update" placeholder="Type Here..." style="width:100%; height: 80px;"></textarea>
+      <button id="updatebutton" style="color: rgb(249, 249, 250) ;background-color: blue;" onclick="showPopup()">submit</button>
+    </div>
+
+  </div>
+
+  <hr>
+  <footer>
+    <p>&copy; Copyright 2024 ProfCheck - All Rights Reserved.</p>
+  </footer>
+
+  <script>function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }</script>
+  <script>
+    // JavaScript to handle user interaction
+    const stars = document.querySelectorAll('.rating > span');
+
+    stars.forEach((star, index) => {
+      star.addEventListener('click', () => {
+        resetRating(); // Reset all stars
+        for (let i = 0; i <= index; i++) {
+          stars[i].innerHTML = '&#x2605;'; // Fill the stars up to the clicked one
+        }
+      });
+    });
+
+    function resetRating() {
+      stars.forEach(star => {
+        star.innerHTML = '&#x2606;'; // Reset all stars to empty
+      });
+    }
+    
+  </script>
+  <script>
+    function showPopup() {
+      alert("Thank you for your valuable feedback!");
+    }
+  </script>
+</body>
+
+</html>

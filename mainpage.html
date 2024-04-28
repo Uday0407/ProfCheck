@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFCHECK</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <meta name="description" content="profcheck">
+</head>
+
+<body>
+    <header>
+        <h1 id="id1">PROFCHECK!!!</h1>
+        <h1 id="id2">LIVE COMFORTABLY <br> INSIDE CAMPUS</h1>
+        <hr width="50%">
+        <h4 id="id3">Enjoy student life to the fullest with no problem to find lecturers</h4>
+        <button id="id4">Login as Student</button>
+        <button id="id5">Login as Lecturer</button>
+
+    </header>
+    <h3 id="id6">ABOUT PROFCHECK</h3>
+    <hr width="90%">
+    <main>
+
+        <div>
+            <img src="https://www.envistaforensics.com/media/mebd20dj/adobestock_568597769.jpeg?center=0.66971409574468088,0.49994438669522168&mode=crop&width=900&height=447&rnd=133426462407530000&format=webp&quality=80"
+                alt="Lecturer 1" id="id7">
+            <h2 id="id8">Our Mission</h2>
+            <h5 id="id9">At ProfCheck, our mission is to provide live location tracking of lecturer option for students.
+                We
+                strive
+                to create comfort where students can meet lecturers anytime and anywhere for academic guidance.</h5>
+        </div>
+        <div>
+            <img src="https://images.airdroid.com/2022/10/real-time-location-tracking.jpg"
+                alt="Lecturer 1" id="id10">
+            <h2 id="id11">Our features</h2>
+            <h5 id="id12">We offer a variety of amenities to students which includes live location tracking of
+                lecturers,lecturer profile. Our goal is to provide a convenient and simple college
+                experience for all students.</h5>
+        </div>
+    </main>
+    <h3 id="id13">CONTACT US</h3>
+    <hr width="90%">
+    <div class="contact-icons">
+        <a href="https://help.instagram.com/372819389498306" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" class="contact-icon">
+        </a>
+        <a href="https://www.facebook.com/help/668969529866328" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXoMFtNYy-gfuvVnQkKSiDAmfYt0ynmaGz55WPNbUPZw&s" alt="Facebook" class="contact-icon">
+        </a>
+        <a href="https://linktr.ee/blog/how-to-find-your-twitter-url/" target="_blank">
+          <img src="https://pbs.twimg.com/profile_images/1683364393323577345/uUWH_TiG_400x400.jpg" alt="Twitter" class="contact-icon">
+        </a>
+        <a href="https://create.wa.link/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp" class="contact-icon">
+        </a>
+      </div>
+  <h3 id="id14">Website Timings!</h3>
+  <h2 id="id15">Hours</h2>
+  <ul id="id16">
+    <li>Mon: 9:00 am - 5:00 pm</li>
+    <li>Tue: 9:00 am - 5:00 pm</li>
+    <li>Wed: 9:00 am - 5:00 pm</li>
+    <li>Thu: 9:00 am - 5:00 pm</li>
+    <li>Fri: 9:00 am - 5:00 pm</li>
+    <li>Sat: Closed</li>
+    <li>Sun: Closed</li>
+  </ul>
+  
+  <label for="subscribe" id="sub1">Subscribe!!!</label>
+  <input type="text" id="subscribe" name="email" placeholder="Enter your Email">
+  <input type="button" value="Update" id="sub2">
+  
+        <hr>
+        <footer>
+            <p>&copy; Copyright 2024 ProfCheck - All Rights Reserved.</p>
+        </footer>
+        <script src="mainpage.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+    var text = document.getElementById('id2').textContent;
+    var newText = '';
+    for (var i = 0; i < text.length; i++) {
+        if (text[i] !== ' ') {
+            newText += '<span style="opacity: 0">' + text[i] + '</span>';
+        } else {
+            newText += ' ';
+        }
+    }
+    document.getElementById('id2').innerHTML = newText;
+
+    function revealText() {
+        var spans = document.getElementById('id2').getElementsByTagName('span');
+        var index = 0;
+        var interval = setInterval(function() {
+            spans[index].style.opacity = '1';
+            index++;
+            if (index === spans.length) {
+                clearInterval(interval);
+                setTimeout(function() {
+                    for (var i = 0; i < spans.length; i++) {
+                        spans[i].style.opacity = '0';
+                    }
+                    setTimeout(revealText, 500); // Change 500 to adjust the delay before the next reveal
+                }, 1000); // Change 1000 to adjust the delay after full reveal
+            }
+        }, 100);
+    }
+
+    revealText();
+});
+
+
+        </script>
+</body>
+
+</html>

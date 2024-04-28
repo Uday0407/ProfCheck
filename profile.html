@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lecturer Profile</title>
+  <link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+
+<body>
+  <header>
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="lecturerdashboard.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Report</a></li>
+        <li><a href="mainpage.html">Logout</a></li>
+      </ul>
+    </div>
+    <button class="open-btn" onclick="toggleSidebar()">
+      <div class="menu-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </button>
+    <div>
+      <h1 id="mainhead">《 ProfCheck Lecturer Dashboard 》</h1>
+    </div>
+  </header>
+  <div id="dashboard">
+    <h1 id="profileheading">
+      <p id="profileheading2">PROFILE</p>
+    </h1>
+    <form id="profileForm" method="post"  enctype="multipart/form-data" onsubmit="showPopup()">
+      <label for="profilename">Name : </label>
+      <input type="text" name="name" id="profilename" placeholder="Enter your Name" required><br>
+      <label for="profilemail">E-mail : </label>
+      <input type="text" name="email" id="profilemail" placeholder="Enter your E-mail" required><br>
+      <label for="profiledepartment">Department : </label>
+      <input type="text" name="department" id="profiledepartment" placeholder="Enter your Department" required><br>
+      <label for="profilecabin">Cabin_No : </label>
+      <input type="text" name="cabin_no" id="profilecabin" placeholder="Enter your Cabin_No" required><br>
+      <label for="fileToUpload">Choose Profile photo : </label>
+      <input type="file" name="fileToUpload" id="fileToUpload" >
+      <br>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <hr>
+    <form  method="post" enctype="multipart/form-data" onsubmit="showPopup1()">
+      <h2>
+        <p>Upload Timetable/Class Schedule
+        <p>
+      </h2>
+      <input type="file" name="timetable" id="timetable" required> 
+      <button id="upload">Upload</button>
+    </form>
+  </div>
+  <hr>
+  <footer>
+    <p>&copy; Copyright 2024 ProfCheck - All Rights Reserved.</p>
+</footer>
+
+  <script>function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }</script>
+  <script>
+    var button = document.getElementById('updatebutton');
+    button.addEventListener('mouseover', function () {
+      button.animate({
+        scale: 1.1, // Increase size on hover
+        backgroundColor: '#ff0000' // Change color
+      }, {
+        duration: 300 // Animation duration
+      });
+    });
+    function showPopup() {
+      alert("Your profile has been updated!");
+    }
+    function showPopup1() {
+      alert("Your timetable has been updated!");
+    }
+    
+  </script>
+</body>
+
+</html>
